@@ -25,3 +25,12 @@ test ('Add getters', () => {
     expect(user.getLastUpdated).not.toBeUndefined()
 
 });
+
+test ('Add setters', () => {
+    const user = new User(1, "carlogilmar", "Carlo", "Bio")
+    user.setUsername = "Gilmar"
+    expect(user.username).toBe("Gilmar")
+
+    user.setBio = "New Bio"
+    expect(user.bio).toBe("New Bio")
+});
