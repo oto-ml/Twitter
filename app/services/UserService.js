@@ -12,6 +12,11 @@ class UserService {
     static updateUserUserName (user, newUsername) {
         return user.username = newUsername
     }
+
+    static getAllUserNames (users) {
+        const userNames = users.map(user => user.username)
+        return userNames 
+    }
         
 
 }
