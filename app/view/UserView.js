@@ -1,3 +1,4 @@
+const UserService = require('./../services/UserService')
 const User = require('./../services/UserService')
 
 class UserView {
@@ -11,6 +12,11 @@ class UserView {
         else if(typeof payload.username !== 'string' || typeof payload.name !=='string' || typeof payload.id !=='number'){
             return objMessage = {error:"necesitan un valor valido"}
         }
+
+        else {
+            return UserService.create(payload.id, payload.username, payload.name)
+        }
+        
     }
 }
 
